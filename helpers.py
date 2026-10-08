@@ -49,7 +49,7 @@ def get_outlier_mask(col, multiplier=1.5):
 
 def remove_outliers(col, multiplier=1.5):
     lower, upper = get_iqr_bounds(col, multiplier)
-    col.clip(lower=lower, upper=upper)
+    return col.clip(lower=lower, upper=upper)
 
 def trend_model(y, trend_type):
     x = np.arange(1, len(y) + 1)
